@@ -328,3 +328,7 @@
 .navbar-mobile-cta.navbar-wave-btn .navbar-wave-btn-number {
   display: inline;
 }
+
+.wrap{
+  max-width: none !important;
+}
