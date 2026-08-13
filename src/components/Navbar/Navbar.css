@@ -332,3 +332,9 @@
 .wrap{
   max-width: none !important;
 }
+
+@media (max-width: 767px) {
+  .navbar-mobile-cta {
+    display: none !important;
+  }
+}
