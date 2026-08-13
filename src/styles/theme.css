@@ -1,0 +1,171 @@
+/* =========================================================
+   BALAJI RENTALS — DESIGN TOKENS
+   Direction: "Site Plan / Blueprint" — grounded in the
+   vernacular of industrial & commercial property: technical
+   drawings, spec sheets, dimension lines, drawing sheet
+   numbers and concrete/steel materiality.
+   ========================================================= */
+
+:root {
+  /* ---- Color: ink, concrete paper, steel, signage amber ---- */
+  --color-ink: #16222c;
+  --color-ink-soft: #3a4a54;
+  --color-steel: #64747d;
+  --color-steel-light: #93a1a8;
+
+  --color-paper: #f0eee7;
+  --color-paper-alt: #e7e2d6;
+  --color-line: #cfc8b8;
+
+  --color-navy: #101b24;
+  --color-navy-soft: #1c2b36;
+  --color-navy-line: rgba(240, 238, 231, 0.14);
+
+  --color-accent: #e3a72f;
+  --color-accent-dark: #c0871c;
+  --color-accent-soft: rgba(227, 167, 47, 0.14);
+
+  --color-white: #ffffff;
+
+  /* ---- Type ---- */
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  /* ---- Layout ---- */
+  --page-max: 1240px;
+  --page-pad: clamp(20px, 5vw, 64px);
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur-med: 0.5s;
+  --dur-slow: 0.9s;
+
+  --shadow-card: 0 1px 2px rgba(16, 27, 36, 0.06), 0 12px 28px -14px rgba(16, 27, 36, 0.22);
+  --shadow-card-hover: 0 4px 10px rgba(16, 27, 36, 0.08), 0 22px 40px -16px rgba(16, 27, 36, 0.28);
+}
+
+* ,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0;
+  color: var(--color-ink);
+  letter-spacing: 0.2px;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---- Shared layout utility ---- */
+.wrap {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+}
+
+/* ---- Blueprint grid texture (signature background) ---- */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--color-navy-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-navy-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.blueprint-grid--light {
+  background-image:
+    linear-gradient(rgba(22, 34, 44, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 34, 44, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ---- Scroll reveal base states (used across components) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.4s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-navy);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

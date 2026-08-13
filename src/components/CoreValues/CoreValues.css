@@ -1,0 +1,61 @@
+.core-values {
+  padding: 96px 0;
+  background: var(--color-paper-alt);
+}
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.core-values .core-values-card {
+  text-align: center;
+  padding: 36px 26px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) ease;
+}
+
+.core-values .core-values-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.core-values .core-values-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  margin-bottom: 18px;
+}
+
+.core-values .core-values-card-title {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.core-values .core-values-card-desc {
+  font-size: 14.5px;
+  color: var(--color-steel);
+  line-height: 1.65;
+}
+
+@media (max-width: 860px) {
+  .core-values-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .core-values {
+    padding: 64px 0;
+  }
+}
