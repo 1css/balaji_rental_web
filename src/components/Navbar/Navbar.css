@@ -215,8 +215,8 @@
 .navbar .navbar-mobile-cta {
   padding: 12px;
   text-align: center;
-  background: var(--color-ink);
-  color: var(--color-paper);
+  /* background: var(--color-ink);
+  color: var(--color-paper); */
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 14px;
