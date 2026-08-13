@@ -215,8 +215,6 @@
 .navbar .navbar-mobile-cta {
   padding: 12px;
   text-align: center;
-  /* background: var(--color-ink);
-  color: var(--color-paper); */
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 14px;
@@ -272,7 +270,7 @@
   opacity: 0.85;
 }
 
-/* Reveal layer: rises to ~25% fill on hover */
+/* Reveal layer: sits at ~25% fill by default, rises to 100% on hover */
 .navbar-wave-fill {
   position: absolute;
   inset: 0;
@@ -280,15 +278,15 @@
   display: grid;
   place-items: end center;
   overflow: hidden;
-  transform: translateY(100%);
+  transform: translateY(72%); /* ~25-28% filled at rest */
   transition: transform 0.45s var(--ease-out, ease);
 }
 
 .navbar-wave-btn:hover .navbar-wave-fill {
-  transform: translateY(72%); /* leaves ~25-28% of the button filled */
+  transform: translateY(0%); /* fully covers on hover */
 }
 
-/* Spin layer: oversized + rotating so its curved edge reads as a wave line */
+/* Spin layer: oversized + always rotating so the waterline looks alive */
 .navbar-wave-fill-inner {
   width: 180%;
   aspect-ratio: 1;
@@ -304,6 +302,7 @@
 }
 
 .navbar-wave-btn:hover {
+  color: var(--color-paper);
   border-color: var(--color-accent-dark, var(--color-accent));
 }
 
