@@ -34,10 +34,57 @@
   transform: translateX(4px);
 }
 
+/* --- Row: cards grid + slim "more" tab, side by side --- */
+.featured-row {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+}
+
 .featured-grid {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
+}
+
+/* --- Slim vertical "More" tab, sits at the end of the row --- */
+.more-tab {
+  flex-shrink: 0;
+  width: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: var(--color-accent-dark);
+  color: var(--color-paper);
+  transition: background var(--dur-fast) ease, width var(--dur-fast) var(--ease-out);
+}
+
+.more-tab-chevron {
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 700;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.more-tab-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.more-tab:hover {
+  background: var(--color-accent);
+}
+
+.more-tab:hover .more-tab-chevron {
+  transform: translateY(4px);
 }
 
 @media (max-width: 1080px) {
@@ -57,11 +104,15 @@
   }
 }
 
+/* --- Hide the tab on mobile --- */
 @media (max-width: 560px) {
   .featured {
     padding: 64px 0;
   }
   .featured-grid {
     grid-template-columns: 1fr;
+  }
+  .more-tab {
+    display: none;
   }
 }

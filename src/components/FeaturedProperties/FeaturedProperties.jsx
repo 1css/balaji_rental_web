@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
-import SectionHeading from '../SectionHeading/SectionHeading.jsx'
-import PropertyCard from '../PropertyCard/PropertyCard.jsx'
-import properties from '../../data/properties.js'
-import { useScrollReveal } from '../../hooks/useScrollReveal.js'
-import './FeaturedProperties.css'
+import { Link } from "react-router-dom";
+import SectionHeading from "../SectionHeading/SectionHeading.jsx";
+import PropertyCard from "../PropertyCard/PropertyCard.jsx";
+import properties from "../../data/properties.js";
+import { useScrollReveal } from "../../hooks/useScrollReveal.js";
+import "./FeaturedProperties.css";
 
 function FeaturedProperties() {
-  const [ref, inView] = useScrollReveal()
-  const featured = properties.slice(0, 4)
+  const [ref, inView] = useScrollReveal();
+  const featured = properties.slice(0, 4);
 
   return (
     <section className="featured">
@@ -24,16 +24,32 @@ function FeaturedProperties() {
           </Link>
         </div>
 
-        <div ref={ref} className="featured-grid">
-          {featured.map((property, i) => (
-            <div key={property.id} className={`reveal reveal-delay-${Math.min(i + 1, 6)} ${inView ? 'is-visible' : ''}`}>
-              <PropertyCard property={property} index={i} />
-            </div>
-          ))}
+        <div ref={ref} className="featured-row">
+          <div className="featured-grid">
+            {featured.map((property, i) => (
+              <div
+                key={property.id}
+                className={`reveal reveal-delay-${Math.min(i + 1, 6)} ${inView ? "is-visible" : ""}`}
+              >
+                <PropertyCard property={property} index={i} />
+              </div>
+            ))}
+          </div>
+
+          <Link
+            to="/services"
+            className={`more-tab reveal reveal-delay-5 ${inView ? "is-visible" : ""}`}
+            aria-label="View more properties"
+          >
+            <span className="more-tab-chevron" aria-hidden="true">
+              &rsaquo;
+            </span>
+            <span className="more-tab-text">More</span>
+          </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default FeaturedProperties
+export default FeaturedProperties;
