@@ -1,38 +1,15 @@
-import { Link } from "react-router-dom";
-import "./components/PropertyCard/PropertyCard.css"
+import { useScrollReveal } from "../../hooks/useScrollReveal.js";
+import "./SectionHeading.css";
 
+function SectionHeading({sheet,title,description,align="left" ,tone="ink"}){
+  const [ref,inView]=useScrollReveal()
 
-
-function PropertyCard({property,index=0}){
   return (
-    <article className="property-card">
-      <div className="property-card-media">
-        <img src={property.image} alt={property.name} loading="lazy" />
-        <span className="property-card-type">{property.type}</span>
-        <span className="property-card-id">
-          LOT&nbsp;{String(property.id).padStart(2, "0")}
-        </span>
-      </div>
-      <div className="property-card-body">
-        <h3 className="property-card-title">{property.name}</h3>
-        <p className="property-card-location">
-          <span className="property-card-location-icon" aria-hidden="true">
-            📍
-          </span>
-          {property.location}
-        </p>
-        <p className="property-card-size">{property.size}</p>
-        <ul className="property-card-features">
-          {property.features.map((feature)=>(
-            <li className="property-card-feature" key={features}>{feature}</li>
-          ))}
+    <div className={`section-heading section-heading--${align} section-heading--${tone} reveal ${inview ? 'is-visible':''}`}>
+      <span className="section-heading-sheet">{sheet}</span>
+      <h2 className="section-heading-sheet">{title}</h2>
+      {description ? <p className="section-heading-desc">{description}</p>:null}
+    </div>
+  )
 
-        </ul>
-        <Link className="property-card-link" to="/contact">
-        Inquire now
-        <span className="property-card-link-arrow" aria-hidden="true">&rarr;</span>
-        </Link>
-      </div>
-    </article>
-  );
 }

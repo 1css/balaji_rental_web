@@ -278,7 +278,7 @@
   display: grid;
   place-items: end center;
   overflow: hidden;
-  transform: translateY(72%); /* ~25-28% filled at rest */
+  transform: translateY(2%); /* ~25-28% filled at rest */
   transition: transform 0.45s var(--ease-out, ease);
 }
 
@@ -291,7 +291,8 @@
   width: 180%;
   aspect-ratio: 1;
   border-radius: 40%;
-  background: var(--color-accent);
+  /* background: var(--color-accent); */
+  background:#b7b3a9;
   animation: navbar-wave-spin 4s linear infinite;
   flex-shrink: 0;
 }
