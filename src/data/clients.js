@@ -18,11 +18,12 @@ export const stats = [
 ]
 
 export const contactDetails = {
-  phone: '+91 9448275233',
-  phone2:'+91 9663853472',
-  phoneHref: 'tel:+919448275233',
-  whatsappHref: 'https://wa.me/919448275233',
-  email: 'raghu.gr2015@gmail.com',
-  address: 'Tumkur, Karnataka, India',
-  hours: 'Mon – Sat: 9 AM to 6 PM',
-}
+  phone: "+91 9448275233",
+  phone2: "+91 9663853472",
+  phoneHref: "tel:+919448275233",
+  phoneHref: "tel:+919663853472",
+  whatsappHref: "https://wa.me/919448275233",
+  email: "raghu.gr2015@gmail.com",
+  address: "Tumkur, Karnataka, India",
+  hours: "Mon – Sat: 9 AM to 6 PM",
+};
