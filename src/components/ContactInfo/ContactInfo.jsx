@@ -3,32 +3,39 @@ import './ContactInfo.css'
 
 const items = [
   {
-    icon: '☎',
-    label: 'Phone',
+    icon: "☎",
+    label: "Phone",
     value: contactDetails.phone,
     href: contactDetails.phoneHref,
-    note: 'Call for immediate assistance',
+    note: "Call for immediate assistance",
   },
   {
-    icon: '✉',
-    label: 'Email',
+    icon: "☎",
+    label: "Phone",
+    value: contactDetails.phone2,
+    href: contactDetails.phone2,
+    note: "Call for immediate assistance",
+  },
+  {
+    icon: "✉",
+    label: "Email",
     value: contactDetails.email,
     href: `mailto:${contactDetails.email}`,
-    note: 'Send your queries anytime',
+    note: "Send your queries anytime",
   },
   {
-    icon: '📍',
-    label: 'Address',
+    icon: "📍",
+    label: "Address",
     value: contactDetails.address,
-    note: 'Visit our office for a detailed discussion',
+    note: "Visit our office for a detailed discussion",
   },
   {
-    icon: '⏰',
-    label: 'Business hours',
+    icon: "⏰",
+    label: "Business hours",
     value: contactDetails.hours,
     note: "We're here to help during working hours",
   },
-]
+];
 
 function ContactInfo() {
   return (

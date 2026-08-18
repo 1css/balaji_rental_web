@@ -13,19 +13,25 @@ function Hero() {
 
           <h1 className="hero-title">
             Commercial &amp; industrial space,
-            <span className="hero-title-accent"> built for what you&rsquo;re running.</span>
+            <span className="hero-title-accent">
+              {" "}
+              built for what you&rsquo;re running.
+            </span>
           </h1>
 
           <p className="hero-desc">
-            Balaji Rentals leases premium retail, office and industrial-shed space across
-            Tumakuru&rsquo;s fastest-growing corridors — with the infrastructure, parking and
-            connectivity your business plan already assumes.
+            Balaji Rentals leases premium retail, office and industrial-shed
+            space across Tumakuru&rsquo;s fastest-growing corridors — with the
+            infrastructure, parking and connectivity your business plan already
+            assumes.
           </p>
 
           <div className="hero-actions">
             <Link className="hero-btn hero-btn--primary" to="/services">
               Explore properties
-              <span className="hero-btn-arrow" aria-hidden="true">&rarr;</span>
+              <span className="hero-btn-arrow" aria-hidden="true">
+                &rarr;
+              </span>
             </Link>
             <Link className="hero-btn hero-btn--ghost" to="/contact">
               Get in touch
@@ -42,7 +48,8 @@ function Hero() {
           <div className="hero-panel-card blueprint-grid">
             <div className="hero-panel-photo">
               <img
-                src="https://images.unsplash.com/photo-1653333155842-10f622386780?auto=format&fit=crop&w=900&q=80"
+                // src="https://images.unsplash.com/photo-1653333155842-10f622386780?auto=format&fit=crop&w=900&q=80"
+                src="/heroimage.PNG"
                 alt="Modern commercial building exterior"
                 loading="eager"
               />
@@ -70,7 +77,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Hero
