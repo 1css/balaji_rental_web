@@ -18,7 +18,8 @@ export const stats = [
 ]
 
 export const contactDetails = {
-  phone: '+91 94482 75233',
+  phone: '+91 9448275233',
+  phone2:'+91 9663853472',
   phoneHref: 'tel:+919448275233',
   whatsappHref: 'https://wa.me/919448275233',
   email: 'raghu.gr2015@gmail.com',
