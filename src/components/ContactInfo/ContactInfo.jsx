@@ -13,7 +13,7 @@ const items = [
     icon: "☎",
     label: "Phone",
     value: contactDetails.phone2,
-    href: contactDetails.phone2,
+    href: contactDetails.phoneHref2,
     note: "Call for immediate assistance",
   },
   {
